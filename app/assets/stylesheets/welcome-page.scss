@@ -1,0 +1,79 @@
+.welcome-body{
+  margin-top: 50px;
+  padding-right: 0;
+  color: white ;
+  font-family: sans-serif;
+  line-height: 22px;
+  text-align: left;
+  .introduction{
+    .cover-photo {
+      margin-left: 14%;
+      position: relative;
+      display: inline-block;
+      .cover-image{
+        display: block;
+        width: 850px;
+        height: 400px;
+      }
+      .introduction-text{
+        margin-left: 30px;
+        margin-top: 65px;
+        font-size: 16px;
+        width: 270px;
+        line-height: 30px;
+        color: white;
+        position: absolute;
+        z-index: 1;
+      }
+    }
+    .cover-photo:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      display: inline-block;
+      background: -webkit-linear-gradient(right, rgba(256, 256, 256, 0.5), #1A5276);
+    }
+  }
+}
+.departments{
+  margin-top: 40px;
+  margin-bottom: 40px;
+  .heading-name{
+    padding-top: 14px;
+    text-align: center;
+    .heading{
+      font-family: 'Katibeh', cursive;
+      font-size: 40px;
+    }
+  }
+  .department-container{
+    padding: 30px 30px 30px 30px;
+    background: #1A5276;
+    margin-top: 60px;
+    .department-card{
+      margin-top: 30px;
+      height: 400px;
+      background: white;
+      .image-container{
+        width: 100%;
+        height: 300px;
+        .department-image{
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .info-container{
+        padding-right: 10px;
+        padding-top: 10px;
+        text-align: right;
+      }
+    }
+  }
+  .horizontal-line{
+    width: 30%;
+    border: 1px solid #1A5276;
+  }
+}

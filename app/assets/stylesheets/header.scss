@@ -1,0 +1,38 @@
+.header{
+  background: white;
+  font-family: 'Katibeh', cursive;
+  text-align: right;
+  .actions{
+    background: #1A5276;
+    color: white ;
+    height: 80px;
+    text-align: left;
+    padding-top: 26px;
+    padding-left: 20px;
+    width: 100%;
+    .no-style-btn{
+      border: none;
+      background: inherit;
+      color: inherit;
+      font-size: 16px;
+      font-weight: 500;
+      font-family: "Titillium Web",sans-serif;
+    }
+    .logo-img{
+      margin-top: -26px;
+      height: 80px;
+      margin-left: 50px;
+    }
+  }
+  .brand-name{
+    padding-top: 14px;
+    text-align: center;
+    .heading{
+      font-size: 40px;
+    }
+  }
+  .horizontal-line{
+    width: 35%;
+    border: 1px solid #1A5276;
+  }
+}

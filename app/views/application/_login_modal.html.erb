@@ -1,0 +1,130 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" media="all" href="/assets/font-awesome.min.self-6bb04114c00dc0f2115b700bce976c1d368c4c641247d3f2bd520b3067efef45.css?body=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<div class="login-signup-wrapper">
+  <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog signup-modal" role="document">
+      <div class="modal-content">
+        <div class="head">
+          <img src="<%= image_path('model-logo.png')%>" class="model-logo-mobile img-responsive">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-5 col-sm-5 col-xs-12 form-mobile-none side-info-tab">
+              <a class="model-logo" href="#">
+                <img src="<%= image_path('model-logo.png')%>">
+              </a>
+              <div class="caption-model">
+                <p>Connect with your property & team. Engage with management company on a deeper level.</p>
+              </div>
+              <ul class="option-list">
+                <li class="option-item">
+                  <img src="<%= image_path('template/chat-icon.svg') %>">
+                  <span>
+                    <strong class="option-heading">Pow Wow with People</strong>
+                    <br>
+                    Huddle with your team members with a single click of a button
+                  </span>
+                </li>
+                <li class="option-item">
+                  <img src="<%= image_path('template/market-place-icon.svg') %>">
+                  <span>
+                    <strong class="option-heading">Buy & Sell xquicly</strong>
+                    <br>
+                    Reduce excess inventory and buy with simplicity
+                  </span>
+                </li>
+                <li class="option-item">
+                  <img src="<%= image_path('template/gain-icon.svg')%>">
+                  <span>
+                    <strong class="option-heading">Gain Insights</strong>
+                    <br>
+                    Don't work harder, work smarter using the power of xquic
+                  </span>
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-7 col-sm-7 col-xs-12" id="login_form">
+              <%= form_for("user", :html=>{id: 'login_form_modal', class: 'login-form'}, :url => user_session_path) do |f| %>
+                <h2>Log in:</h2>
+                <ul class="social-media-list">
+                  <li id="fb-media-item" class="media-item">
+                    <div class="fb fb_btn">
+                      <a href="<%= user_omniauth_authorize_path(:facebook) %>" class="media-link">
+                        <i class="fa fa-facebook fa-fw"></i>
+                       </a>
+                    </div>
+                  </li>
+                  <li class="media-item">
+                    <div class="linkedin fb_btn">
+                      <a href="<%= user_omniauth_authorize_path(:linkedin) %>" class="media-link">
+                        <i class="fa fa-linkedin fa-fw"></i>
+                       </a>
+                    </div>
+                  </li>
+                  <li class="media-item">
+                    <div class="linkedin fb_btn">
+                      <a href="<%= user_omniauth_authorize_path(:google_oauth2) %>" class="media-link">
+                        <i class="fa fa-google fa-fw"></i>
+                       </a>
+                    </div>
+                  </li>
+                  <li class="media-item">
+                    <div class="linkedin fb_btn">
+                      <a href="<%= user_omniauth_authorize_path(:microsoft_graph) %>" class="media-link">
+                        <i class="fa fa-envelope fa-fw"></i>
+                       </a>
+                    </div>
+                  </li>
+                </ul>
+
+                <div class="form-group email-username">
+                  <label for="user_login_email">Email / Username</label>
+                  <div class="">
+                    <%= f.text_field :email,value: get_email_value, autofocus: true, placeholder: "Email or Username", class: "form-control input-wrap person-icon", id: 'user_login_email', required: true%>
+                  </div>
+                </div>
+                <div class="form-group password">
+                  <label for="user_login_password">Password</label>
+                  <div class="">
+                    <%= f.password_field :password, autocomplete: "off", placeholder: "Password", class: "form-control input-wrap person-icon", "data-toggle": "password" , id: 'user_login_password', required: true%>
+                  </div>
+                </div>
+                <div class="form-group login-action">
+                  <div class="row">
+                    <div class="col-md-6 col-xs-12">
+                      <label class="checkbox-button">
+                        <%= f.check_box :remember_me , id: 'login_checkbox' %>Remember Me
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div class="col-md-6 col-xs-12 pull-right">
+                      <button type="submit" class="btn-login login-button" value="Login">Log In</button>
+                      <a class="forget-link" href="<%=new_password_path('user')%>">Forgot Your Password?</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-caption">
+                  <p class="caption">Don’t have an account? <a href="#" id="sign_up_action" class="caption-link">Sign up</a></p>
+                  <p class="caption">Haven't received confirmation email? <a href="<%= new_confirmation_path(User) %>" id="resend_email_action" class="caption-link">Resend Email</a></p>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+   $(document).ready(function(){
+     $('#sign_up_action').click(function() {
+       $('#loginModal').modal('hide');
+       $('#signup_modal').modal('show');
+     });
+   });
+</script>

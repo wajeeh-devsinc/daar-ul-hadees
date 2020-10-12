@@ -1,0 +1,115 @@
+#adsByLocation {
+  text-align: left;
+    .clear-custom {
+      margin-top: 30px;
+      width: 100%;
+      .ads {
+        background: white;
+        display: contents;
+        .location-card {
+          margin: 10px;
+          border: 0;
+          border-radius: 0.1875rem;
+          display: inline-block;
+          position: relative;
+          margin-bottom: 30px;
+          box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.2);
+          flex-direction: column;
+          min-width: 0;
+          word-wrap: break-word;
+          background-color: #fff;
+          background-clip: border-box;
+          .marker-img {
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            opacity: 0.7;
+            width: 48px;
+            img {
+              border-radius: 3px;
+              max-width: 100%;
+              vertical-align: middle;
+              border: 0;
+            }
+          }
+          .view {
+            background-color: #fff;
+            margin-left: 4%;
+            margin-right: 4%;
+            margin-top: -15px;
+            border-radius: 5px;
+            box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2),
+              0 3px 10px 0 rgba(0, 0, 0, 0.19);
+            .img-responsive {
+              border-radius: 3px;
+              display: block;
+              max-width: 100%;
+              height: auto;
+            }
+          }
+          .card-body {
+            flex: 1 1 auto;
+            padding: 1.25rem;
+            position: relative;
+            .gradient1 {
+              display: inline;
+              position: relative;
+              color: #000;
+              background: #fff;
+              mix-blend-mode: multiply;
+              h3 {
+                color: #232323;
+                font-weight: 500;
+                font-size: 20px;
+                margin: 0;
+                line-height: 1.6em;
+              }
+              &:before {
+                z-index: 1;
+                mix-blend-mode: screen;
+                content: '';
+                display: block;
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                background: -webkit-linear-gradient(
+                  left,
+                  #23966c,
+                  #faaa54,
+                  #e23b4a,
+                  #db0768,
+                  #360670
+                );
+                background: linear-gradient(
+                  to right,
+                  #23966c,
+                  #faaa54,
+                  #e23b4a,
+                  #db0768,
+                  #360670
+                );
+                pointer-events: none;
+              }
+            }
+            h5 {
+              font-size: 14px;
+              line-height: 1.6;
+              color: #ccc;
+              font-weight: 500;
+              position: relative;
+              font-family: 'Quicksand', sans-serif;
+              font-weight: 400;
+              margin: 0;
+              padding: 0;
+            }
+          }
+        }
+      }
+      &:hover {
+        color: #f58936;
+      }
+    }
+  }
+  
